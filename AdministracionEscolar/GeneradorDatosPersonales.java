@@ -6,10 +6,40 @@ package AdministracionEscolar;
  * and open the template in the editor.
  */
 
+/*
+Edad es aleatoria, de edades de entre 18 – 27. Un alumno de 5to semestre no puede 
+tener 18. La dirección debe leerse de un archivo de texto con 500 direcciones.
+*/
+
 /**
  *
  * @author Propietario
  */
-public class GeneradorDatosPersonales {
-    
+public class GeneradorDatosPersonales extends Alumno {
+
+    private int edadAleatoria, semestreAleatorio;
+
+    protected int[] generarEdades() {
+        for (int i = 0; i < this.edades.length; i++) {
+            edadAleatoria = (int) (Math.random() * (17 - 28 + 1) + 28);
+            edades[i] = edadAleatoria;
+
+        }
+        return edades;
+    }
+
+    protected int[] generarSemestre() {
+        for (int i = 0; i < this.semestres.length; i++) {
+            semestreAleatorio = (int) (Math.random() * (0 - 11 + 1) + 11);
+            if (edades[i] == 18) {
+                semestreAleatorio = (int) (Math.random() * (0 - 6 + 1) + 6);
+                semestres[i] = semestreAleatorio;
+            } else if (edades[i] > 18) {
+                semestreAleatorio = (int) (Math.random() * (5 - 11 + 1) + 11);
+                semestres[i] = semestreAleatorio;
+            }
+        }
+        return semestres;
+    }
+
 }

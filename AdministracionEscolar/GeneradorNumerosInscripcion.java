@@ -9,7 +9,7 @@ package AdministracionEscolar;
  *
  * @author Propietario
  */
-public class GeneradorNumerosInscripcion {
+public class GeneradorNumerosInscripcion extends RegistrosAcademicos {
     private int indicadorEscolar; // (Promedio)(Escolaridad)(Velacidad)
     private float escolaridad;
     private float velacidad;
@@ -53,10 +53,5 @@ public class GeneradorNumerosInscripcion {
     public void setPromedio(float promedio) {
         this.promedio = promedio;
     }
-    
-    
-    
-    
-    
-    
+
 }

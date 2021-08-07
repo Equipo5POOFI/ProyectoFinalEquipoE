@@ -1,4 +1,4 @@
-package AdministracionEscolar;
+package proyecto;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,34 +10,41 @@ package AdministracionEscolar;
  *
  * @author Propietario
  */
-public class RegistrosAcademicos extends Alumno {
+public class RegistrosAcademicos extends AdmnistracionEscolar {
     
-    private int semestre;
+    private int semestre, totalAsignaturas, totalCreditosSemestres;
     
-    // Se comienza a contar desde indice 0, para coinidir connumro de semestrese generan cantidad y creditos de asignatura asiganturasCreditos[i] = [cantidad][creditos]
-    private int[][] creditosSemestre = { { -1, 5, 5, 6, 5, 5, 5, 6, 5, 5, 5 }, { -1, 46, 44, 46, 42, 42, 48, 46, 44, 40, 40 } };
+    // Se comienza a contar desde indice 0, para coinidir con numero de semestrese generan cantidad y creditos de asignatura asiganturasCreditos[i] = [cantidad][creditos]
+    private final int[] creditosPorSemestre = { -1, 46, 44, 46, 42, 42, 48, 46, 44, 40, 40 } ;
+    private final int [] asignaturasPorSemestre = { -1, 5, 5, 6, 5, 5, 5, 6, 5, 5, 5 };
+    public RegistrosAcademicos() {
+    }
     
     
-    protected int [][] generarAsignaturas() {
+    
+    protected int [][] generarAsignaturas(int [] semestres) {
         //Se va a rrecorreer asiganturasCreditos[50][2]
-        for (int i = 0; i < asiganturasCreditos.length; i++) {
-            for (int j = 0; j < asiganturasCreditos[i].length; j++) {
-                semestre = semestres[i];
-                asiganturasCreditos[i][j]=creditosSemestre[semestre][semestre];
+        for (int i = 0; i < this.asiganturasCreditos.length; i++) {
+            this.semestre = semestres[i];
+            totalAsignaturas = 0;
+            totalCreditosSemestres = 0;
+            for (int j = 0; j < 2; j++) {
+                if (j == 0){
+                    for (int k = 1; k<semestre+1; k++){
+                        totalAsignaturas += asignaturasPorSemestre[k];
+                    }                        
+                    this.asiganturasCreditos[i][j] = totalAsignaturas;
+                }else if (j==1){
+                        for (int k = 1; k<semestre+1; k++){
+                        totalCreditosSemestres += creditosPorSemestre[k];
+                    }
+                    this.asiganturasCreditos[i][j] = totalCreditosSemestres;
+                        }
+                     
             }
         }
-        for (int i = 0; i < asiganturasCreditos.length; i++) {
-            System.out.println(asiganturasCreditos.length);
-            System.out.println(asiganturasCreditos[i].length);
-            //For para imprimir 
-            /*for (int j = 0; j < asiganturasCreditos[i].length; j++) {
-                System.out.println(asiganturasCreditos[i][j]);
-                if (j!=asiganturasCreditos[i].length-1){
-                    System.out.print("\n");
-                }
-            }*/
-        }
-        return creditosSemestre;
+        
+        return this.asiganturasCreditos;
     
     }
 }

@@ -1,4 +1,4 @@
-package AdministracionEscolar;
+package proyecto;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,7 +15,7 @@ tener 18. La dirección debe leerse de un archivo de texto con 500 direcciones.
  *
  * @author Propietario
  */
-public class GeneradorDatosPersonales extends Alumno {
+public class GeneradorDatosPersonales extends AdmnistracionEscolar {
 
     private int edadAleatoria, semestreAleatorio;
 

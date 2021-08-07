@@ -1,4 +1,4 @@
-package AdministracionEscolar;
+package proyecto;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -10,7 +10,7 @@ package AdministracionEscolar;
  *
  * @author Propietario
  */
-public class generadorDeNombres extends Alumno {
+public class generadorDeNombres extends AdmnistracionEscolar {
 
     private int numeroAleatorio, numeroAleatorio2;
     public String nombres[] = { "Manuel", "Antonio", "José", "William", "George", "Joseph", "Thomas", "Carlos", "Frank",
@@ -30,20 +30,11 @@ public class generadorDeNombres extends Alumno {
     public generadorDeNombres() {
     }
 
-    public String[] getNombreCompleto() {
-        return nombreCompleto;
-    }
-
-    public void setNombreCompleto(String[] nombreCompleto) {
-        this.nombreCompleto = nombreCompleto;
-    }
-
     public String[] generarNombre(String nombres[], String apellidos[]) {
         for (int i = 0; i < this.nombreCompleto.length; i++) {
             numeroAleatorio = (int) (Math.random() * 49);
             numeroAleatorio2 = (int) (Math.random() * 49);
-            System.out.println(numeroAleatorio + " " + numeroAleatorio2);
-            if (0 == numeroAleatorio % 2 && numeroAleatorio <= 20) {
+            if (numeroAleatorio % 2 == 0 && numeroAleatorio <= 20) {
                 nombreCompleto[i] = this.nombres[numeroAleatorio] + " " + this.nombres[numeroAleatorio2] + " "
                         + this.apellidos[numeroAleatorio] + " " + this.apellidos[numeroAleatorio2];
             } else {
@@ -51,10 +42,7 @@ public class generadorDeNombres extends Alumno {
                         + this.apellidos[numeroAleatorio2];
             }
         }
-        for (int i = 0; i < this.nombreCompleto.length; i++) {
-            System.out.println(nombreCompleto[i]);
-        }
-        return nombreCompleto;
+        return this.nombreCompleto;
 
     }
 

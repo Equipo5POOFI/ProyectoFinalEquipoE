@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AdministracionEscolar;
+package proyecto;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class Prueba {
     public static void main(String[] args) {
+        /*
 
         generadorDeNombres prueba = new generadorDeNombres();
         prueba.generarNombre(prueba.nombres, prueba.apellidos);
@@ -25,7 +26,7 @@ public class Prueba {
         Map<String, String> datosAlumnos = new HashMap<String, String>();
         datosAlumnos.put("Esteban", Cadenas);
 
-        System.out.println(datosAlumnos);
+        //System.out.println(datosAlumnos);
 
         GeneradorDatosPersonales pru = new GeneradorDatosPersonales();
        System.out.println("Edades: \n");
@@ -43,8 +44,19 @@ public class Prueba {
         System.out.println(convertido);
         
        RegistrosAcademicos reg = new RegistrosAcademicos();
-       reg.generarAsignaturas();
-
+       
+       Alumno alu = new Alumno();*/
+        
+        int [][] matriz = {{1, 2, 3 , 4 , 5},
+                            {6, 7, 8, 9, 10}};
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j]+"\t");
+            }
+            System.out.println("");
+        
+        }
+        
     }
 
 }

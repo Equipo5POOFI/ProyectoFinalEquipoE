@@ -14,7 +14,7 @@ public class generadorDeNombres extends AdmnistracionEscolar {
 
     private int numeroAleatorio, numeroAleatorio2;
     public String nombres[] = { "Manuel", "Antonio", "José", "William", "George", "Joseph", "Thomas", "Carlos", "Frank",
-            "Edward,Walter", "Damián", "Martín", "Samuel", "Santiago", "Sebastián", "Alejandro", "Jack", "Donald",
+            "Edward","Walter", "Damián", "Martín", "Samuel", "Santiago", "Sebastián", "Alejandro", "Jack", "Donald",
             "Albert", "Paul", "Daniel", "David", "Roy", "Hector", "Alejandra", "Elizabeth", "María", "Lucía",
             "Guadalupe", "Adriana", "Verónica", "Isabel", "Erika", "Daniela", "Mónica", "Carmen", "Carolina",
             "Patricia", "Pilar", "Rosario", "Juana", "Isabel", "Antonia", "Dolores", "Luisa", "Gabriela", "Sofía",

@@ -10,11 +10,12 @@ package proyecto;
  * @author Propietario
  */
 public class AdmnistracionEscolar {
-    protected String[] nombreCompleto = new String[50];
-    protected int[] edades = new int[50];
-    protected int[] semestres = new int[50];
-    protected int[][] asiganturasCreditos = new int[50][2];
-    protected int [] numeroInscripcion = new int[50];
+    protected String[] nombreCompleto = new String[50];//Almacena los nombres de los alumnos
+    protected int[] edades = new int[50];//Almacena las edades de los alumnos
+    protected int[] semestres = new int[50];//Almacena los semestres de los alumnos
+    protected int[][] asiganturasCreditos = new int[50][2];//Almacena el numero de asignaturas y creditos del alumno
+    protected int [] numeroInscripcion = new int[50];//Almacena los numeros de inscripción
+    protected float [] promedios = new float[50];
     
     public void menu(){
         

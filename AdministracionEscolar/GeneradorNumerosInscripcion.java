@@ -17,7 +17,9 @@ public class GeneradorNumerosInscripcion extends RegistrosAcademicos {
     
     protected int [] numerosInscripcion = new int[50];
     
-
+    public int [] generarNumero(){
+        return numerosInscripcion;
+    }
     
 
 }

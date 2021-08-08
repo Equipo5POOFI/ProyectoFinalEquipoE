@@ -12,7 +12,10 @@ package proyecto;
  */
 public class RegistrosAcademicos extends AdmnistracionEscolar {
     
-    private int semestre, totalAsignaturas, totalCreditosSemestres;
+    private int semestre, totalAsignaturas, totalCreditosSemestres, calificacion, sumaCalificaciones;
+    private float promedio;
+    private int [] totalAsignaturasPromedio= new int [50];
+    
     
     // Se comienza a contar desde indice 0, para coinidir con numero de semestrese generan cantidad y creditos de asignatura asiganturasCreditos[i] = [cantidad][creditos]
     private final int[] creditosPorSemestre = { -1, 46, 44, 46, 42, 42, 48, 46, 44, 40, 40 } ;
@@ -34,18 +37,37 @@ public class RegistrosAcademicos extends AdmnistracionEscolar {
                         totalAsignaturas += asignaturasPorSemestre[k];
                     }                        
                     this.asiganturasCreditos[i][j] = totalAsignaturas;
+                    this.totalAsignaturasPromedio[i] = totalAsignaturas;
                 }else if (j==1){
                         for (int k = 1; k<semestre+1; k++){
                         totalCreditosSemestres += creditosPorSemestre[k];
                     }
                     this.asiganturasCreditos[i][j] = totalCreditosSemestres;
-                        }
-                     
+                        } 
             }
+            
+            
         }
         
         return this.asiganturasCreditos;
     
+    }
+    
+    protected float[] generarPromedio(){
+        for (int i = 0; i < totalAsignaturasPromedio.length; i++) {
+            int [] calificaciones = new int[totalAsignaturasPromedio[i]];
+            sumaCalificaciones = 0;
+            for (int j = 0; j < totalAsignaturasPromedio[i]; j++) {
+                calificaciones[j] = (int) (Math.random() * (4 - 11 + 1) + 11);
+                sumaCalificaciones += calificaciones[j];
+            }
+            promedios[i] = sumaCalificaciones/totalAsignaturasPromedio[i];
+        }
+        
+        
+        
+        
+        return promedios;
     }
 }
     

@@ -23,23 +23,23 @@ public class GeneradorDatosPersonales extends AdmnistracionEscolar {
         for (int i = 0; i < this.edades.length; i++) {
             edadAleatoria = (int) (Math.random() * (17 - 28 + 1) + 28);
             edades[i] = edadAleatoria;
-
         }
         return edades;
     }
 
     protected int[] generarSemestre() {
         for (int i = 0; i < this.semestres.length; i++) {
-            semestreAleatorio = (int) (Math.random() * (0 - 11 + 1) + 11);
             if (edades[i] == 18) {
-                semestreAleatorio = (int) (Math.random() * (0 - 6 + 1) + 6);
+                semestreAleatorio = (int) (Math.random() * (0 - 5 + 1) + 5);
                 semestres[i] = semestreAleatorio;
             } else if (edades[i] > 18) {
-                semestreAleatorio = (int) (Math.random() * (5 - 11 + 1) + 11);
+                semestreAleatorio = (int) (Math.random() * (6 - 11 + 1) + 11);
                 semestres[i] = semestreAleatorio;
             }
         }
         return semestres;
     }
+    
+    //metodo para generar direcciones
 
 }

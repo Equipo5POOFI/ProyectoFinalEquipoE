@@ -9,13 +9,15 @@ package proyecto;
  *
  * @author Propietario
  */
-public class GeneradorNumerosInscripcion extends RegistrosAcademicos {
+public class GeneradorNumerosInscripcion extends AdmnistracionEscolar {
     private int indicadorEscolar; // (Promedio)(Escolaridad)(Velacidad)
     private float escolaridad;
     private float velacidad;
     private float promedio;
     
     protected int [] numerosInscripcion = new int[50];
+    
+    
     
     public int [] generarNumero(){
         return numerosInscripcion;

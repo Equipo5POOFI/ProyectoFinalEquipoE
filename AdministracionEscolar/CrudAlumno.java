@@ -15,8 +15,8 @@ public class CrudAlumno {
         AdmnistracionEscolar ad = new AdmnistracionEscolar();
         
         
-        ad.menu();
-        alu.PruebaAlumno();
+        //ad.menu();
+        //alu.PruebaAlumno();
         alu.traerDatos();
         
         

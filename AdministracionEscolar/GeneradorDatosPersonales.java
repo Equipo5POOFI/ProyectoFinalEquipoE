@@ -40,6 +40,12 @@ public class GeneradorDatosPersonales extends AdmnistracionEscolar {
         return semestres;
     }
     
+    
     //metodo para generar direcciones
+    protected String[] generarDirecciones() {
+        
+        return direcciones;
+    }
+    
 
 }

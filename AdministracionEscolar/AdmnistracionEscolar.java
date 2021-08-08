@@ -16,6 +16,7 @@ public class AdmnistracionEscolar {
     protected int[][] asiganturasCreditos = new int[50][2];//Almacena el numero de asignaturas y creditos del alumno
     protected int [] numeroInscripcion = new int[50];//Almacena los numeros de inscripción
     protected float [] promedios = new float[50];
+    protected String[] direcciones = new String[50];
     
     public void menu(){
         

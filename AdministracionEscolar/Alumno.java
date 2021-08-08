@@ -30,14 +30,16 @@ public class Alumno extends AdmnistracionEscolar {
         this.asiganturasCreditos = reg.generarAsignaturas(this.semestres);
         this.numeroInscripcion = NumInscripcion.generarNumero();
         this.promedios = reg.generarPromedio();
+        this.direcciones = pr.generarDirecciones();
         
     }
     
     protected String [][] traerDatos(/*String[] nombreCompleto, int[] edades, int[] semestres, int [] numeroInscripcion*/ ){
         
-        System.out.println("Nombre, Edad, Semestre, NumeroInscripcion");
+        System.out.println("Nombre, Edad, Semestre, NumeroInscripcion, Direccion");
         for (int i = 0; i < this.datosAlumnos.length; i++) {
-            this.datosAlumnos[i] = +this.edades[i] + ", " + this.semestres[i]+", "+ this.numeroInscripcion[i];
+            this.datosAlumnos[i] = +this.edades[i] + ", " + this.semestres[i]+", "+ this.numeroInscripcion[i]
+                    +", "+ this.direcciones[i];
             for (int j = 0; j < registrosAlumnos[i].length; j++) {
                 if (j == 0)
                     this.registrosAlumnos[i][j]=nombreCompleto[i];
@@ -78,6 +80,11 @@ public class Alumno extends AdmnistracionEscolar {
         System.out.println("Promedios: ");
         for (int i = 0; i < this.promedios.length; i++) {
             System.out.println(promedios[i]);
+        }
+        
+        System.out.println("Direciones: ");
+        for (int i = 0; i < this.direcciones.length; i++) {
+            System.out.println(i+": " +this.direcciones[i]);
         }
     }
     

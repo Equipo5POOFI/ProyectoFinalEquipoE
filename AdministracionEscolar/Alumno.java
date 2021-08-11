@@ -20,17 +20,17 @@ public class Alumno extends AdmnistracionEscolar {
     protected String [] datosAlumnos = new String[50];
 
     public Alumno() {
-        generadorDeNombres pr1 = new generadorDeNombres();
-        GeneradorDatosPersonales pr = new GeneradorDatosPersonales();
+        generadorDeNombres pr1 = new generadorDeNombres();//cambiar nombre del objeto
+        GeneradorDatosPersonales pr = new GeneradorDatosPersonales();//cambiar nombre del objeto
         RegistrosAcademicos reg = new RegistrosAcademicos();
         GeneradorNumerosInscripcion NumInscripcion = new GeneradorNumerosInscripcion();
         this.nombreCompleto= pr1.generarNombre(pr1.nombres, pr1.apellidos);
         this.edades= pr.generarEdades();
         this.semestres= pr.generarSemestre();    
         this.asiganturasCreditos = reg.generarAsignaturas(this.semestres);
-        this.numeroInscripcion = NumInscripcion.generarNumero();
         this.promedios = reg.generarPromedio();
         this.direcciones = pr.generarDirecciones();
+        this.numeroInscripcion = NumInscripcion.generarNumero(reg.totalMateriasReprobadas, this.asiganturasCreditos, this.promedios);
         
     }
     
@@ -46,14 +46,15 @@ public class Alumno extends AdmnistracionEscolar {
                 else if (j == 1)
                     this.registrosAlumnos[i][j] = datosAlumnos[i];
             }
-            System.out.print(this.registrosAlumnos[i][0]+"\t"+this.registrosAlumnos[i][1]);
+            System.out.print(this.registrosAlumnos[i][0]+"\t"+this.registrosAlumnos[i][1]);//borrar
                 System.out.println("");
         }
         return registrosAlumnos;
     }
     
-    public void PruebaAlumno(){
-               
+    public void PruebaAlumno(){//borrar 
+        
+        
         System.out.println("Nombres: ");
         for (int i = 0; i < this.nombreCompleto.length; i++) {
             System.out.println(i+": " +this.nombreCompleto[i]);
@@ -86,6 +87,8 @@ public class Alumno extends AdmnistracionEscolar {
         for (int i = 0; i < this.direcciones.length; i++) {
             System.out.println(i+": " +this.direcciones[i]);
         }
+        
+        
     }
     
     

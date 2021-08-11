@@ -9,18 +9,53 @@ package proyecto;
  *
  * @author Propietario
  */
+
 public class GeneradorNumerosInscripcion extends AdmnistracionEscolar {
     private int indicadorEscolar; // (Promedio)(Escolaridad)(Velacidad)
-    private float escolaridad;
-    private float velacidad;
+    private float escolaridad; //(Asignatura aprobadas en ordinario/Asignaturas inscritas en ordinario)*100
+    private float velocidad; //(Creditos del alumno/Creditos desde el ingreso)*100
     private float promedio;
-    
-    protected int [] numerosInscripcion = new int[50];
-    
+    private int asignaturasAprobadas, creditosAlumno;
     
     
-    public int [] generarNumero(){
-        return numerosInscripcion;
+    public int [] generarNumero(int [] totalReprobadas, int [][] asignaturas_y_creditos, float [] promedio){
+        System.out.println("Escolaridad");
+        for (int i = 0; i < 50; i++) {
+            this.escolaridad =  generarEscolaridad(totalReprobadas,asignaturas_y_creditos );
+            this.velocidad = generarVelacidad(totalReprobadas,asignaturas_y_creditos );
+            
+            this.promedio = promedio[i];
+            indicadorEscolar = (int)(this.promedio * this.escolaridad * this.velocidad);
+            numeroInscripcion[i] = indicadorEscolar;
+        }
+        
+        return numeroInscripcion;
+    }
+    
+    
+    /*
+     * (Asignatura aprobadas en ordinario/Asignaturas inscritas en ordinario)*100
+     * restarle el total de asignatiuras reprobadas a el total de asignaturas, traer de arreglo totalMateriasReprobadas
+    */
+    private float generarEscolaridad(int [] totalReprobadas, int [][] asignaturas_y_creditos){
+        for (int i = 0; i < asignaturas_y_creditos.length; i++) {
+            asignaturasAprobadas = asignaturas_y_creditos[i][0] - totalReprobadas[i];
+            escolaridad = (float)((float)asignaturasAprobadas / (float)asignaturas_y_creditos[i][0])*100;
+        }
+        return escolaridad;
+    }
+    
+    
+    /*
+     * (Creditos del alumno/Creditos desde el ingreso)*100
+     * total de creditos - cantidad de asignaturas reprobadas *(8)
+    */
+    private float generarVelacidad(int [] totalReprobadas, int [][] asignaturas_y_creditos){
+        for (int i = 0; i < 50; i++) {
+            velocidad = 1;
+            
+        }
+        return velocidad;
     }
     
 

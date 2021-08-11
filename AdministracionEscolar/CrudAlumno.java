@@ -16,7 +16,7 @@ public class CrudAlumno {
         
         
         //ad.menu();
-        //alu.PruebaAlumno();
+        alu.PruebaAlumno();
         alu.traerDatos();
         
         

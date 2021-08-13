@@ -13,18 +13,18 @@ package proyecto;
 public class generadorDeNombres extends AdmnistracionEscolar {
 
     private int numeroAleatorio, numeroAleatorio2;
-    public String nombres[] = { "Manuel", "Antonio", "José", "William", "George", "Joseph", "Thomas", "Carlos", "Frank",
-            "Edward","Walter", "Damián", "Martín", "Samuel", "Santiago", "Sebastián", "Alejandro", "Jack", "Donald",
-            "Albert", "Paul", "Daniel", "David", "Roy", "Hector", "Alejandra", "Elizabeth", "María", "Lucía",
-            "Guadalupe", "Adriana", "Verónica", "Isabel", "Erika", "Daniela", "Mónica", "Carmen", "Carolina",
+    public String nombres[] = { "Manuel", "Antonio", "Jose", "William", "George", "Joseph", "Thomas", "Carlos", "Frank",
+            "Esteban", "Walter", "Damian", "Martin", "Samuel", "Santiago", "Sebastián", "Alejandro", "Jack", "Donald",
+            "Albert", "Paul", "Daniel", "David", "Roy", "Hector", "Alejandra", "Elizabeth", "Maria", "Lucia",
+            "Guadalupe", "Adriana", "Veronica", "Isabel", "Erika", "Daniela", "Monica", "Carmen", "Carolina",
             "Patricia", "Pilar", "Rosario", "Juana", "Isabel", "Antonia", "Dolores", "Luisa", "Gabriela", "Sofía",
             "Andrea", "Rosario" };
 
-    public String apellidos[] = { "González", "Rodríguez", "Gómez", "Fernández", "López", "Díaz", "Díaz", "Pérez",
-            "García", "Sánchez", "Romero", "Sosa", "Álvarez", "Torres", "Ruiz", "Ramírez", "Flores", "Acosta",
-            "Benítez", "Medina", "Suárez", "Herrera", "Aguirre", "Pereyra", "Gutiérrez", "Giménez", "Molina", "Silva",
-            "Castro", "Rojas", "Ortíz", "Núñez", "Luna", "Juárez", "Cabrera", "Ríos", "Ferreyra", "Huchín", "Morales",
-            "Domínguez", "Moreno", "Peralta", "Vega", "Carrizo", "Hernández", "Quiroga", "Castillo", "Ledesma",
+    public String apellidos[] = { "Gonzalez", "Rodriguez", "Gomez", "Fernandez", "Lopez", "Diaz", "Alcantara", "Perez",
+            "Garcia", "Sanchez", "Romero", "Sosa", "Alvarez", "Torres", "Ruiz", "Ramirez", "Flores", "Acosta",
+            "Benitez", "Medina", "Suarez", "Herrera", "Aguirre", "Pereyra", "Gutierrez", "Gimenez", "Molina", "Silva",
+            "Castro", "Rojas", "Ortiz", "Nuez", "Luna", "Juarez", "Cabrera", "Rios", "Ferreyra", "Huchin", "Morales",
+            "Dominguez", "Moreno", "Peralta", "Vega", "Carrizo", "Hernández", "Quiroga", "Castillo", "Jasso",
             "Ledesma", "Ojeda" };
 
     public generadorDeNombres() {

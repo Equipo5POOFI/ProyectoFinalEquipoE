@@ -5,6 +5,7 @@
  */
 package proyecto;
 
+
 /**
  *
  * @author Propietario
@@ -13,14 +14,13 @@ public class CrudAlumno {
     public static void main(String[] args) {
         Alumno alu = new Alumno();
         AdmnistracionEscolar ad = new AdmnistracionEscolar();
-        
-        
-        //ad.menu();
-        alu.PruebaAlumno();
+
+         ad.menu();
+        //alu.PruebaAlumno();
         alu.traerDatos();
+        ad.archivoAlumnos(alu.registrosAlumnos);
         
         
         
-      
     }
 }

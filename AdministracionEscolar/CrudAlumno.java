@@ -5,22 +5,23 @@
  */
 package proyecto;
 
+import java.io.IOException;
+
 
 /**
  *
  * @author Propietario
  */
 public class CrudAlumno {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Alumno alu = new Alumno();
         AdmnistracionEscolar ad = new AdmnistracionEscolar();
-
-         ad.menu();
-        //alu.PruebaAlumno();
+        
+        
+        //ad.menu();
+        alu.PruebaAlumno();
         alu.traerDatos();
         ad.archivoAlumnos(alu.registrosAlumnos);
-        
-        
         
     }
 }

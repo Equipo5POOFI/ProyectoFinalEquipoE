@@ -31,7 +31,7 @@ public class RegistrosAcademicos extends AdmnistracionEscolar {
                                         "Probabilidad","Calculo vectorial","Ecuaciones diferenciales","Cultura y comunicacion", "Estructura de datos y algoritmos ll",
                                         "Programacion orientada a objetos","Fundamentos de estadistica","Electricidad y Magnetismo","Analisis numerico","Matematicas avanzadas",
                                         "Estructuras discretas","Estructura y programacio de computadoras","Dispositivos electronicos","Lenguajes formales y automatas",
-                                        "Señales y sistemas","Ingenieria de software","Sistemas operativos","Disenio digital moderno","Bases de datos","Circuitos electricos",
+                                        "Seniales y sistemas","Ingenieria de software","Sistemas operativos","Disenio digital moderno","Bases de datos","Circuitos electricos",
                                         "Administracion de proyectos de software","Finanzas en la ingenieria en computacion","Disenio digital VLSI","Inteligencia artificial",
                                         "Compiladores","Sistemas de comunicaciones","Introduccion a la economia","Optativas de ciencias sociales y humanidades","Microcomputadoras",
                                         "Computacion grafica e interaccion humano-computadora ","Etica Profesional","Redes de Datos Seguras","Organizacion y arquitectura de computadoras",
@@ -94,7 +94,7 @@ public class RegistrosAcademicos extends AdmnistracionEscolar {
         return promedios;
     }
     
-    protected String[] generarAsignaturas(){
+    protected String[] generarMaterias(){
         
         for (int i = 0; i < totalAsignaturasPromedio.length; i++) {
             materiasAlumno[i]="";

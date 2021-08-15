@@ -1,5 +1,11 @@
 package proyecto;
 
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.StringTokenizer;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -41,9 +47,29 @@ public class GeneradorDatosPersonales extends AdmnistracionEscolar {
     }
 
     // metodo para generar direcciones
-    protected String[] generarDirecciones() {
-
+    public String[] generarDirecciones() throws IOException {
+        int i=0;
+        String texto = leerArchivo();
+	StringTokenizer tokens=new StringTokenizer(texto, ";");
+        while(tokens.hasMoreTokens()){
+                direcciones[i]=""+tokens.nextToken();
+                i++;
+                if (i == 50)
+                    break;
+            //System.out.println(tokens.nextToken());
+        }
         return direcciones;
+    }
+    
+    public String leerArchivo () throws FileNotFoundException, IOException{
+        FileInputStream direccion = null;
+        byte[] buffer = new byte[100000];
+        int nBytes;
+        direccion = new FileInputStream("archivoConDirecciones.txt");
+        nBytes = direccion.read(buffer, 0, 100000);
+        String texto = new String(buffer, 0, nBytes);
+            
+        return texto;
     }
 
 }

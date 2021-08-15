@@ -64,17 +64,19 @@ public class AdmnistracionEscolar {
     }
 
     public void CRUD() {
+         // metodo para poder hacer cambios
         String name;
         System.out.println("Ingresar nombre del alumno a modificar con el formato:\n Nombre Apellido Apellido");
         name = in.readString();
-        // metodo para poder hacer cambios
+       
     }
 
     public void consultar() {
+        // metodo para consultar los datos de un alumno en específico
         String name;
         System.out.println("Ingresa tu nombre con el formato:\n Nombre Apellido Apellido");
         name = in.readString();
-        // metodo para consultar los datos de un alumno en específico
+        
     }
     
     public void archivoAlumnos(String[][] registrosAlumnos){

@@ -1,4 +1,7 @@
 package proyecto;
+
+import java.io.IOException;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +18,7 @@ public class Alumno extends AdmnistracionEscolar {
     protected String[][] registrosAlumnos = new String[50][2];
     protected String[] datosAlumnos = new String[50];
 
-    public Alumno() {
+    public Alumno() throws IOException {
         generadorDeNombres pr1 = new generadorDeNombres();// cambiar nombre del objeto
         GeneradorDatosPersonales pr = new GeneradorDatosPersonales();// cambiar nombre del objeto
         RegistrosAcademicos reg = new RegistrosAcademicos();
@@ -28,7 +31,7 @@ public class Alumno extends AdmnistracionEscolar {
         this.direcciones = pr.generarDirecciones();
         this.numeroInscripcion = NumInscripcion.generarNumero(reg.totalMateriasReprobadas, this.asiganturasCreditos,
                 this.promedios, reg.creditosDescontar);
-        this.materias=reg.generarAsignaturas();
+        this.materias=reg.generarMaterias();
         this.calificaciones=reg.getCalificaciones();
 
     }
@@ -48,7 +51,7 @@ public class Alumno extends AdmnistracionEscolar {
         }
         return registrosAlumnos;
     }
-    /*
+    
     public void PruebaAlumno() {// borrar
 
         System.out.println("Nombres: ");
@@ -89,6 +92,6 @@ public class Alumno extends AdmnistracionEscolar {
             System.out.println(i + ": " + this.numeroInscripcion[i]);
         }
 
-    }]*/
+    }
 
 }

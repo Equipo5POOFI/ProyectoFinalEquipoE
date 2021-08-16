@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -28,57 +29,10 @@ public class AdmnistracionEscolar {
     protected String[] calificaciones = new String[50];
     
     KeyboardInput in = new KeyboardInput();
-
-    public void menu() {
-
-        
-        int op;
-        String contrasena;
-        while (true) {
-            System.out.println("\t\tAdministracosn Escolar\t\t");
-            System.out.println(
-                    "-------------------------------------------------------------------------------------------------");
-            System.out.println(
-                    "|\t1. Consultar informacion de estudiante\t||\t2.Ingresar para realizar modificaciones\t|");
-            System.out.println(
-                    "-------------------------------------------------------------------------------------------------");
-            System.out.println("Ingrese una opción o ingrese 3 para salir: ");
-            op = in.readInteger();
-            if (op == 1) {
-                System.out.println("Consulta tus datos con tu nombre: ");
-                consultar();
-            } else if (op == 2) {
-                // Se podran consultar los datos utilizando el nombre de usuario
-                System.out.println("Ingresa contraseña de administrador: ");
-                contrasena = in.readString();
-                if (contrasena == "admin")
-                    CRUD();
-                else
-                    System.out.println("Contrasena incorrecta. Intentelo de nuevo");
-            } else if (op == 3) {
-                System.out.println("Gracias por utilizar el sistema");
-                break;
-            } else {
-                System.out.println("Opción incorrecta !!!!\n Intentelo de nuevo");
-            }
-        }
-    }
-
-    public void CRUD() {
-         // metodo para poder hacer cambios
-        String name;
-        System.out.println("Ingresar nombre del alumno a modificar con el formato:\n Nombre Apellido Apellido");
-        name = in.readString();
-       
-    }
-
-    public void consultar() {
-        // metodo para consultar los datos de un alumno en específico
-        String name;
-        System.out.println("Ingresa tu nombre con el formato:\n Nombre Apellido Apellido");
-        name = in.readString();
-        
-    }
+    
+    
+    
+  
     
     public void archivoAlumnos(String[][] registrosAlumnos){
         

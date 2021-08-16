@@ -24,7 +24,7 @@ public class CrudAlumno {
         Alumno alu = new Alumno();
         AdmnistracionEscolar ad = new AdmnistracionEscolar();
         
-        int op;
+        int op, op1;
         int contrasena;
         
         KeyboardInput in = new KeyboardInput();
@@ -32,8 +32,8 @@ public class CrudAlumno {
         alu.traerDatos();
         ad.archivoAlumnos(alu.registrosAlumnos);
         
-        
-        while (true) {
+        boolean bandera = true;
+        while (bandera == true) {
             System.out.println("\t\tAdministracosn Escolar\t\t");
             System.out.println(
                     "-------------------------------------------------------------------------------------------------");
@@ -47,28 +47,46 @@ public class CrudAlumno {
                 case 1:
                     System.out.println("Consulta tus datos con tu nombre");
                     alu.consultar();
-                    
                     break;
                 case 2:
-                    // Se podran consultar los datos utilizando el nombre de usuario
-                    System.out.println("Ingresa contraseña de administrador: ");
-                    contrasena = in.readInteger();
                     
-                    while (true) {
+                    boolean bandera1 = true;
+                    boolean bandera2 = true;
+                    while (bandera1 == true) {
+                        System.out.println("Ingresa contraseña de administrador: ");
+                        contrasena = in.readInteger();
                         switch (contrasena) {
                             case 1234:
                                 alu.CRUD();
                                 ad.archivoAlumnos(alu.registrosAlumnos);
+                                while(bandera2 == true){
+                                    System.out.println("Desea realizar otra modificación\n| 1. Si || 2.No |");
+                                    op1 = in.readInteger();
+                                    if (op1 == 1){
+                                        alu.CRUD();
+                                        ad.archivoAlumnos(alu.registrosAlumnos);
+                                    }
+                                    else if(op1 == 2){
+                                        bandera2 = false;
+                                        bandera1 = false;
+                                        break;
+                                    }
+                                    else
+                                        System.out.println("Opción Incorrecta intentelo denuevo");
+                                }
                                 break;
                             case 4:
+                                bandera1 = false;
                                 break;
                             default:
                                 System.out.println("Contrasena incorrecta. Intentelo de nuevo\nIngrese 4 para salir");
                                 break;
+                                
                         }
                     }
                 case 3:
                     System.out.println("Gracias por utilizar el sistema");
+                    bandera = false;
                     break;
                 default:
                     System.out.println("Opción incorrecta !!!!\n Intentelo de nuevo");

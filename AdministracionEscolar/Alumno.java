@@ -54,49 +54,55 @@ public class Alumno extends AdmnistracionEscolar {
     public void CRUD(){
         String name;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingresar nombre del alumno a modificar con el formato:\n Nombre (s) Apellido Apellido");
-        name = sc.nextLine();
+        boolean bandera = true;
+        int indiceAcambiar=-1;
+        while(bandera == true){
+            System.out.println("Ingresar nombre del alumno a modificar con el formato:\n Nombre (s) Apellido Apellido");
+            name = sc.nextLine();
+            
+            for (int i = 0; i < nombreCompleto.length; i++) {
+                if (name.equals(nombreCompleto[i])){
+                    indiceAcambiar  = i;
+                    bandera = false;
+                    break;
+                }else if(i == 49){
+                    System.out.println("No se encontró el alumno");
+                }
+            }
+        }
         KeyboardInput in = new KeyboardInput();
         int op;
-        op = in.readInteger();
-        
-        int indiceAcambiar=-1;
-        for (int i = 0; i < nombreCompleto.length; i++) {
-            if (name == nombreCompleto[i])
-                indiceAcambiar  = i;
-        }
-        
         System.out.println("Que dato desea cambiar\n1.Edad || 2.Semestres || 3.Dirección \n4.Salir");
         op = in.readInteger();
         int cambio = 0;
         String cambioDir = "";
         switch (op) {
                 case 1:
-                    
-                    System.out.println("Ingrese la nueva edad: ");
-                    cambio = in.readInteger();
                     while(true){
-                        if (cambio > 18 || cambio < 30){
+                        System.out.println("Ingrese la nueva edad: ");
+                        cambio = in.readInteger();
+                        if (cambio > 18 && cambio < 30){
                             this.edades[indiceAcambiar] = cambio;
                             break;
                         }else
                             System.out.println("Edad no valida. Intentelo de nuevo");
                     }
                     traerDatos( );
-                
+                break;
                 case 2:
                     cambio = 0;
-                    System.out.println("Ingrese el nuevo semestre: ");
-                    cambioDir = sc.nextLine();
+                    //boolean bandera = true;
                     while(true){
-                        if (cambio > 1 || cambio < 11){
+                        System.out.println("Ingrese el nuevo semestre: ");
+                        cambio = in.readInteger();
+                        if (cambio > 1 && cambio < 11){
                             this.semestres[indiceAcambiar] = cambio;
                             break;
                         }else
-                            System.out.println("Semestre no valida. Intentelo de nuevo");
+                            System.out.println("Semestre no valido. Intentelo de nuevo");
                     }
                     traerDatos( );
-                    
+                break;    
                 case 3:
                     System.out.println("Ingrese la nueva dirección: \nCon el formato Calle #número Colonia Alcaldia/Municipio Estado");
                     cambioDir = sc.nextLine();
@@ -119,12 +125,14 @@ public class Alumno extends AdmnistracionEscolar {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingresar tu nombre con el formato:\n Nombre (s) Apellido Apellido");
         name = sc.nextLine();
-        
+        //System.out.println(name + " "+nombreCompleto[0]+""+datosAlumnos[0]);
         for (int i = 0; i < nombreCompleto.length; i++) {
-            if (name == nombreCompleto[i]){
-                System.out.println( datosAlumnos[i]);
+            if(name.equals(nombreCompleto[i])){
+                System.out.println("Edad: "+ this.edades[i] + "\nSemestre: " + this.semestres[i] + "\nNumero de inscripción: " + this.numeroInscripcion[i] + "\nDirección: "
+                    + this.direcciones[i]+ "\nMeterias: "+materias[i]+ "\nCalificaciones: "+calificaciones[i]);
                 break;
-                        }
+            }else if (i == 49)
+                System.out.println("No se encontro el alumno");
         
         }
     }

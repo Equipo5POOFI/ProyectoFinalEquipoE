@@ -12,6 +12,8 @@ import java.io.IOException;
  *
  * @author Propietario
  */
+
+
 public class CrudAlumno {
     public static void main(String[] args) throws IOException {
         Alumno alu = new Alumno();
@@ -19,7 +21,7 @@ public class CrudAlumno {
         
         
         //ad.menu();
-        alu.PruebaAlumno();
+        //alu.PruebaAlumno();
         alu.traerDatos();
         ad.archivoAlumnos(alu.registrosAlumnos);
         

@@ -51,47 +51,4 @@ public class Alumno extends AdmnistracionEscolar {
         }
         return registrosAlumnos;
     }
-    
-    public void PruebaAlumno() {// borrar
-
-        System.out.println("Nombres: ");
-        for (int i = 0; i < this.nombreCompleto.length; i++) {
-            System.out.println(i + ": " + this.nombreCompleto[i]);
-        }
-
-        System.out.println("Edades: ");
-        for (int i = 0; i < this.edades.length; i++) {
-            System.out.println(i + ": " + this.edades[i]);
-        }
-
-        System.out.println("Semestres: ");
-        for (int i = 0; i < this.semestres.length; i++) {
-            System.out.println(i + ": " + this.semestres[i]);
-        }
-
-        System.out.println("Asignaturas y Creditos por semestre: ");
-        for (int i = 0; i < this.asiganturasCreditos.length; i++) {
-            System.out.println("\nSemestre: " + this.semestres[i]);
-            for (int j = 0; j < this.asiganturasCreditos[i].length; j++) {
-                System.out.print(this.asiganturasCreditos[i][j] + "\t");
-            }
-        }
-
-        System.out.println("Promedios: ");
-        for (int i = 0; i < this.promedios.length; i++) {
-            System.out.println(promedios[i]);
-        }
-
-        System.out.println("Direciones: ");
-        for (int i = 0; i < this.direcciones.length; i++) {
-            System.out.println(i + ": " + this.direcciones[i]);
-        }
-        
-        System.out.println("Numeros de Inscripción: ");
-        for (int i = 0; i < this.numeroInscripcion.length; i++) {
-            System.out.println(i + ": " + this.numeroInscripcion[i]);
-        }
-
-    }
-
 }

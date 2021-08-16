@@ -26,6 +26,7 @@ public class AdmnistracionEscolar {
     protected String[] direcciones = new String[50];
     protected String[] materias = new String[50];
     protected String[] calificaciones = new String[50];
+    
     KeyboardInput in = new KeyboardInput();
 
     public void menu() {
@@ -89,7 +90,7 @@ public class AdmnistracionEscolar {
         try{
             BufferedReader br;
             br = new BufferedReader(new InputStreamReader(System.in));
-            FileWriter fw = new FileWriter("archivoComas.csv");//Se crea un archivo
+            FileWriter fw = new FileWriter("datosProyectoFinal.csv");//Se crea un archivo
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter salida = new PrintWriter(bw);
             salida.println(texto);

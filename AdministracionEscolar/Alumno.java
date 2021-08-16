@@ -46,8 +46,6 @@ public class Alumno extends AdmnistracionEscolar {
                 else if (j == 1)
                     this.registrosAlumnos[i][j] = datosAlumnos[i];
             }
-            //System.out.print(this.registrosAlumnos[i][0] + "\t" + this.registrosAlumnos[i][1]);// borrar
-            //System.out.println("");
         }
         return registrosAlumnos;
     }

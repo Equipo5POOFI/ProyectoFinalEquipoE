@@ -47,7 +47,7 @@ public class GeneradorDatosPersonales extends AdmnistracionEscolar {
     }
 
     // metodo para generar direcciones
-    public String[] generarDirecciones() throws IOException {
+    protected String[] generarDirecciones() throws IOException {
         int i=0;
         String texto = leerArchivo();
 	StringTokenizer tokens=new StringTokenizer(texto, ";");
@@ -61,7 +61,7 @@ public class GeneradorDatosPersonales extends AdmnistracionEscolar {
         return direcciones;
     }
     
-    public String leerArchivo () throws FileNotFoundException, IOException{
+    private String leerArchivo () throws FileNotFoundException, IOException{
         FileInputStream direccion = null;
         byte[] buffer = new byte[100000];
         int nBytes;
